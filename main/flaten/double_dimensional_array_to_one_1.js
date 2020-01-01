@@ -10,15 +10,7 @@ function double_to_one(collection) {
       result = result.concat(collection[i])
     }
   }
-  var result_no_repest = [];
-  var no_repeat_obj = {};
-  for (var i = 0, len = collection.length; i < len; i++) {
-    if (!no_repeat_obj[collection[i]]) {
-      result_no_repest.push(collection[i]);
-      no_repeat_obj[collection[i]] = 1;
-    }
-  }
-  return result_no_repest;
+  return result;
 }
 
 module.exports = double_to_one;
