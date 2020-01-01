@@ -1,7 +1,11 @@
 'use strict';
 
 function calculate_elements_sum(collection, element) {
-  //在这里写入代码
+  for (var i = 0, len = collection.length; i < len; i ++) {
+    if (element === collection[i]) {
+      return i;
+    }
+  }
 }
 
 module.exports = calculate_elements_sum;
