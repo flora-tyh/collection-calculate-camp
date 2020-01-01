@@ -17,7 +17,7 @@ function get_letter_interval_2(number_a, number_b) {
         for (var j = 0; j < collection_letter.length; j++) {
           count += ((collection_letter[j].toUpperCase().charCodeAt() - 64) * Math.pow(26, j));
         }
-        collection_sort[i] = count;  
+        collection_sort[count] = collection_a[i];  
       }
     })();
     for (var i = Math.min(number_a, number_b); i <= Math.max(number_a, number_b); i++) {
