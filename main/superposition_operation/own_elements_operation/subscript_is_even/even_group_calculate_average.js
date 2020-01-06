@@ -18,7 +18,7 @@
     }
     var collection_digit = [];
     for (var i = 0, len = collection_even.length; i < len; i++) {
-      var num_digit = collection_even[i].toString().length
+      var num_digit = collection_even[i].toString().length;
       if (!collection_digit[num_digit - 1]) {
         collection_digit[num_digit - 1] = [];
       }
@@ -37,7 +37,7 @@
     if (result.length === 0) {
       return [0];
     } else {
-      return result
+      return result;
     }
   }
 module.exports = even_group_calculate_average;
