@@ -1,14 +1,13 @@
 'use strict';
-
+var rank_desc = require('../../main/map/rank_desc.js');
 function compute_median(collection) {
-  var arr = collection.split("->");
-  arr = rank_desc(arr);
-  var len = arr.length;
+  var collection_decs = rank_desc(collection);
+  var len = collection_decs.length;
   if (len % 2) {
-    return (arr[Math.ceil(len / 2)]);
+    return (collection_decs[Math.ceil(len / 2)]);
   }
   else {
-    return (arr[len / 2 - 1] + arr[len / 2]) / 2;
+    return (collection_decs[len / 2 - 1] + collection_decs[len / 2]) / 2;
   }
 }
 

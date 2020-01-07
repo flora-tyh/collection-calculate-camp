@@ -8,7 +8,7 @@ function compute_chain_median(collection) {
     return (arr[Math.ceil(len / 2)]);
   }
   else {
-    return (arr[len / 2 - 1] + arr[len / 2]) / 2;
+    return (parseInt(arr[len / 2 - 1]) + parseInt(arr[len / 2])) / 2;
   }
 }
 
