@@ -1,29 +1,9 @@
 'use strict';
+var collect_all_even = require('../../../main/collectionOperator/collect_all_even.js');
+var number_map_to_word_over_26 = require('../../../main/map/number_map_to_word_over_26.js');
 
 function even_to_letter(collection) {
-
-  //在这里写入代码
-  var even_collection = [];
-  for (var i = 0, len = collection.length; i < len; i++) {
-    if (!(collection[i] % 2)) {
-      even_collection.push(collection[i])
-    }
-  }
-  var numToLetter = function(number) {
-    if (number > 26) {
-      var remainder = number % 26;
-      var quotient = number / 26;
-      return (numToLetter(quotient) + String.fromCharCode(remainder + 64).toLowerCase());
-    } 
-    else {
-      return (String.fromCharCode(number + 64).toLowerCase());
-    }
-  }
-  var result = [];
-  for (var i = 0, len = even_collection.length; i < len; i++) {
-    result.push(numToLetter(even_collection[i]));
-  }
-  return result;
+  return number_map_to_word_over_26(collect_all_even(collection))
 }
 
 module.exports = even_to_letter;
