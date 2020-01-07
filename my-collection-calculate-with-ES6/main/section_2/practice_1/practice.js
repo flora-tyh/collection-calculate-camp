@@ -1,13 +1,13 @@
 function count_same_elements(collection) {
   //在这里写入代码
   var count_obj = {};
-  for (var i = 0, len = collection.length; i < len; i++) {
-    if (count_obj[collection[i]]) {
-      count_obj[collection[i]]++;
+  collection.forEach(element => {
+    if (count_obj[element]) {
+      count_obj[element]++;
     } else {
-      count_obj[collection[i]] = 1;
+      count_obj[element] = 1;
     }
-  }  
+  })
   var result = [];
   for (var i in count_obj) {
     var collection_count = {};
