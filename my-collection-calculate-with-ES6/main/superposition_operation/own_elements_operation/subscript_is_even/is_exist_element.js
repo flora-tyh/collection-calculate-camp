@@ -1,10 +1,9 @@
 'use strict';
 var is_exist_element = function(collection,element){
-  for (var i = 0, len = collection.length; i < len; i += 2) {
-    if (element === collection[i]) {
-      return true
-    }
+  if (collection.filter((element, index) => !(index % 2)).indexOf(element) + 1) {
+    return true;
+  } else {
+    return false;
   }
-  return false
 };
 module.exports = is_exist_element;
