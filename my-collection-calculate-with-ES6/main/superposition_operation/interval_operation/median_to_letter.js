@@ -1,26 +1,9 @@
 'use strict';
+var compute_median = require('../../../main/reduce/compute_median.js');
+var number_map_to_word_over_26 = require('../../../main/map/number_map_to_word_over_26.js');
 
 function median_to_letter(collection) {
-
-  //在这里写入代码
-  var len = collection.length;
-  var mid_number = 0;
-  if (len % 2) {
-    mid_number = collection[(len - 1) / 2];
-  } else {
-    mid_number = Math.ceil((collection[len / 2 - 1] + collection[len / 2]) / 2);
-  }
-  var numToLetter = function(number) {
-    if (number > 26) {
-      var remainder = number % 26;
-      var quotient = number / 26;
-      return (numToLetter(quotient) + String.fromCharCode(remainder + 64).toLowerCase());
-    } 
-    else {
-      return (String.fromCharCode(number + 64).toLowerCase());
-    }
-  }
-  return numToLetter(mid_number)
+  return number_map_to_word_over_26(Array.of(Math.ceil(compute_median(collection))))[0];
 }  
 
 module.exports = median_to_letter;

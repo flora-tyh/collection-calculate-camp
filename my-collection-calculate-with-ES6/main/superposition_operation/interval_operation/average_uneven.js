@@ -1,17 +1,8 @@
 'use strict';
 
 function average_uneven(collection) {
-
-  //在这里写入代码
-  var result = 0;
-  var count = 0;
-  for (var i = 0, len = collection.length; i < len; i++) {
-    if (collection[i] % 2) {
-      result += collection[i];
-      count++;
-    }
-  }
-  return result/count;
+  let collection_even = collection.filter(element => element % 2);
+  return collection_even.reduce((num1, num2) => num1 + num2) / collection_even.length;
 }
 
 module.exports = average_uneven;
